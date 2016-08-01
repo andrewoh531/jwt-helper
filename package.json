@@ -8,8 +8,8 @@
     "url": "git://github.com/andrewoh531/jwt-helper.git"
   },
   "scripts": {
-    "test": "mocha indexTest.js --compilers js:babel-core/register",
-    "compile": "babel --presets es2015,stage-0 index.js -d lib/",
+    "test": "mocha test/indexTest.js --compilers js:babel-core/register",
+    "compile": "babel --presets es2015,stage-0 src/ -d lib/",
     "preinstall": "npm run compile",
     "prepublish": "npm run compile"
   },

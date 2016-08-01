@@ -1,26 +1,7 @@
-import jwt from 'jsonwebtoken';
+var createToken = require('./src/index').createToken;
+var isTokenValid = require('./src/index').isTokenValid;
 
-function createToken(issuer, audience, expiryInSeconds, secret, userId) {
-  const payload = {userId};
-  const options = {issuer, audience, expiresIn: `${expiryInSeconds}s`};
-  return jwt.sign(payload, secret, options);
-}
-
-function isTokenValid(token, issuer, audience, secret) {
-  try {
-    jwt.verify(token, secret, {issuer, audience});
-  } catch (err) {
-    return {
-      isValid: false,
-      error: err.name,
-      msg: err.message
-    };
-  }
-
-  return {isValid: true};
-}
-
-export {
-  createToken,
-  isTokenValid
+exports.default = {
+  createToken: createToken,
+  isTokenValid: isTokenValid
 };
