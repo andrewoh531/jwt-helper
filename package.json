@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "JWT helper module",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrewoh531/jwt-helper.git"
+  },
   "scripts": {
     "test": "mocha indexTest.js --compilers js:babel-core/register"
   },
