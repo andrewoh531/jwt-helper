@@ -22,11 +22,12 @@ describe('JwtService', () => {
   });
 
   describe('isTokenValid', () => {
-    const validToken = jwt.sign({}, jwtSecret, {expiresIn: '1 day', issuer, audience});
+    const validToken = jwt.sign({userId: 'andrew'}, jwtSecret, {expiresIn: '1 day', issuer, audience});
 
     it('shold return true when token is valid', () => {
       const response = isTokenValid(validToken, issuer, audience, jwtSecret);
       expect(response.isValid).to.be.true;
+      expect(response.userId).to.equal('andrew');
     });
 
     it('shold return false when issuer is invalid', () => {

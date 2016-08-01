@@ -8,7 +8,8 @@ function createToken(issuer, audience, expiryInSeconds, secret, userId) {
 
 function isTokenValid(token, issuer, audience, secret) {
   try {
-    jwt.verify(token, secret, {issuer, audience});
+    const decoded = jwt.verify(token, secret, {issuer, audience});
+    return {userId: decoded.userId, isValid: true};
   } catch (err) {
     return {
       isValid: false,
@@ -16,8 +17,6 @@ function isTokenValid(token, issuer, audience, secret) {
       msg: err.message
     };
   }
-
-  return {isValid: true};
 }
 
 export {
