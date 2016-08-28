@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "mocha test/indexTest.js --compilers js:babel-core/register",
-    "compile": "./node_modules/.bin/babel --presets es2015,stage-0 src/ -d lib/",
+    "compile": "babel --presets es2015,stage-0 src/ -d lib/",
     "preinstall": "npm run compile",
     "prepublish": "npm run compile"
   },
