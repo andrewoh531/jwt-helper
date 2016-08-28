@@ -10,7 +10,7 @@
   "scripts": {
     "test": "mocha test/indexTest.js --compilers js:babel-core/register",
     "compile": "babel src/ -d lib/",
-    "prepublish": "npm run compile"
+    "postinstall": "npm run compile"
   },
   "author": "",
   "license": "ISC",
