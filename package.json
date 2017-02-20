@@ -1,6 +1,6 @@
 {
   "name": "jwt-helper-andrewoh531",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JWT helper module",
   "main": "index.js",
   "repository": {
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "mocha test/indexTest.js --compilers js:babel-core/register",
     "compile": "babel src/ -d lib/",
-    "postinstall": "npm run compile"
+    "prepublish": "npm run compile"
   },
   "author": "",
   "license": "ISC",
